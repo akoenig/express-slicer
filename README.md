@@ -36,28 +36,28 @@ The middleware can handle array responses as well as single objects:
 
 ## Usage
 
-    ```javascript
+```javascript
 
-    'use strict';
+'use strict';
 
-    var express = require('express'),
-        slicer = require('express-slicer'),
-        app = express();
+var express = require('express'),
+    slicer = require('express-slicer'),
+    app = express();
 
-    app.use(slicer());
+app.use(slicer());
 
-    app.get('/persons', function list (req, res) {
-        var persons = [
-            {firstName: 'André', lastName: 'König', email: 'andre.koenig@posteo.de'},
-            {firstName: 'Hans', lastName: 'Müller', email: 'hans.mueller@gmail.com'}
-        ];
+app.get('/persons', function list (req, res) {
+    var persons = [
+        {firstName: 'André', lastName: 'König', email: 'andre.koenig@posteo.de'},
+        {firstName: 'Hans', lastName: 'Müller', email: 'hans.mueller@gmail.com'}
+    ];
 
-        res.json(200, persons);
-    });
+    res.json(200, persons);
+});
 
-    app.listen(9090);
+app.listen(9090);
 
-    ```
+```
 
 ## Tests
 
