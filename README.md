@@ -37,6 +37,7 @@ The middleware can handle array responses as well as single objects:
 ## Usage
 
     ```javascript
+
     'use strict';
 
     var express = require('express'),
@@ -55,6 +56,7 @@ The middleware can handle array responses as well as single objects:
     });
 
     app.listen(9090);
+
     ```
 
 ## Tests
