@@ -1,0 +1,25 @@
+{
+  "name": "express-slicer",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akoenig/express-slicer.git"
+  },
+  "keywords": [
+    "partial",
+    "response",
+    "json",
+    "rest",
+    "express"
+  ],
+  "author": "André König (andre.koenig@posteo.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akoenig/express-slicer/issues"
+  }
+}
