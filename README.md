@@ -2,7 +2,7 @@
 
 An ExpressJS middleware that provides the functionality for partial JSON responses based on the querystring.
 
-    An Example:
+    An example:
 
         GET http://host.tld/persons?fields=id,lastName,firstName
 
@@ -36,6 +36,7 @@ The middleware can handle array responses as well as single objects:
 
 ## Usage
 
+    ```javascript
     'use strict';
 
     var express = require('express'),
@@ -54,8 +55,9 @@ The middleware can handle array responses as well as single objects:
     });
 
     app.listen(9090);
+    ```
 
-## Running the tests
+## Tests
 
 Feel free to clone this repository and do some hackery. In order to run the tests just switch into the project directory, install the development dependencies and execute
 
@@ -63,8 +65,4 @@ Feel free to clone this repository and do some hackery. In order to run the test
 
 ## Author
 
-Copyright 2013, [André König](http://iam.andrekoenig.info) (andre.koenig@posteo.de)
-
-|_|0|_|
-|_|_|0|
-|0|0|0|
+Copyright 2013, [André König](http://iam.andrekoenig.info) (akoenig@posteo.de)
