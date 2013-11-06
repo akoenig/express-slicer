@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,15 @@
     "rest",
     "express"
   ],
-  "author": "André König (andre.koenig@posteo.de)",
+  "author": "André König (akoenig@posteo.de)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/akoenig/express-slicer/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-jasmine-node": "~0.1.0",
+    "express": "~3.4.4"
   }
 }
