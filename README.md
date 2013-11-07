@@ -9,7 +9,7 @@ Let's say you are the proud owner of an API that provides information about all 
     GET http://host.tld/api/persons?fields=id,lastName,firstName
 
 Response body:
-
+    [
         {
             id: 1,
             firstName: 'André',
@@ -20,6 +20,8 @@ Response body:
             firstName: 'Hans',
             lastName: 'Müller'  
         }
+
+    ]
 
 The middleware can handle array responses as well as single objects:
 
