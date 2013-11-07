@@ -54,7 +54,7 @@ ExpressSlicer.prototype.$$extractFields = function $$extractFields (obj, fields)
         }
     }
 
-    // If no field will matched, return the full object.
+    // If no field matched, return the full object.
     if (!extract) {
         extract = obj;
     }
