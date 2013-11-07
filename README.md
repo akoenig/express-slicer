@@ -59,7 +59,7 @@ app.get('/persons', function list (req, res) {
 
 app.listen(9090);
 
-// Start your browser: http://127.0.0.1/persons?fields=firstName
+// Start your browser: http://127.0.0.1:9090/persons?fields=firstName
 
 ```
 
