@@ -87,25 +87,25 @@ ExpressSlicer.prototype.$$extractFields = function $$extractFields (obj, fields)
  *
  * The dispatcher function that prepares the slicable object(s).
  *
- * @param {array|object} slicables An array or one single object from which the fields should be extracted.
+ * @param {array|object} sliceables An array or one single object from which the fields should be extracted.
  * @param {array} fields The fields that should be extracted.
  *
  * @return {array} The array with the sliced objects. Even if there is only one object, it will be an array.
  *
  */
-ExpressSlicer.prototype.$$slice = function $$slice (slicables, fields) {
+ExpressSlicer.prototype.$$slice = function $$slice (sliceables, fields) {
     var slices = [],
         extract,
         i;
 
-    if (!util.isArray(slicables)) {
-        slicables = [slicables];
+    if (!util.isArray(sliceables)) {
+        sliceables = [sliceables];
     }
 
-    i = slicables.length - 1;
+    i = sliceables.length - 1;
 
     for (i; i >= 0; i = i - 1) {
-        extract = this.$$extractFields(slicables[i], fields);
+        extract = this.$$extractFields(sliceables[i], fields);
 
         if (extract) {
             slices.push(extract);
@@ -140,18 +140,18 @@ ExpressSlicer.prototype.$$parseArguments = function $$parseArguments () {
     // 
     if (2 === args.length) {
 
-        // Is: res.json(slicables, statusCode);
+        // Is: res.json(sliceables, statusCode);
         if ('number' === typeof args[1]) {
             parsed.status = args[1];
             parsed.sliceables = args[0];
 
-        // Is: res.json(statusCode, slicables);
+        // Is: res.json(statusCode, sliceables);
         } else {
             parsed.status = args[0];
             parsed.sliceables = args[1];
         }
 
-    // Is: res.json(slicables);
+    // Is: res.json(sliceables);
     } else {
         parsed.sliceables = args[0];
     }
@@ -213,7 +213,7 @@ ExpressSlicer.prototype.$$entangle = function $$entangle (func) {
         }
 
         //
-        // res.json(statusCode, slicables)
+        // res.json(statusCode, sliceables)
         //
         func.apply(this, [args.status, result]);
     };
