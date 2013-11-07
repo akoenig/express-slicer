@@ -11,6 +11,7 @@
 var express = require('express'),
     http    = require('http'),
     url     = require('url'),
+    util     = require('util'),
     slicer  = require('../');
 
 describe('The express-slicer', function () {
@@ -35,7 +36,7 @@ describe('The express-slicer', function () {
             })
             .on('error', callback)
             .on('end', function onEnd () {
-                return callback(null, JSON.parse(Buffer.concat(chunks).toString()));
+                return callback(null, JSON.parse(Buffer.concat(chunks).toString()), res.statusCode);
             });
         }
 
@@ -50,7 +51,7 @@ describe('The express-slicer', function () {
             {firstName: 'Hans', lastName: 'Müller', email: 'hans.mueller@gmail.com'}
         ];
 
-        res.json(200, persons);
+        res.json(persons);
     });
 
     app.get('/persons/:id', function one (req, res) {
@@ -68,10 +69,12 @@ describe('The express-slicer', function () {
     it('should be able to slice particular attributes from objects in a list', function (done) {
         var endpoint = 'http://' + host + ':' + port + '/persons?fields=firstName,lastName';
 
-        function onResponse (err, persons) {
+        function onResponse (err, persons, statusCode) {
             if (err) {
                 throw err; // Let the test crash if there is an error!
             }
+
+            expect(util.isArray(persons)).toBe(true);
 
             expect(persons).toBeDefined();
             expect(persons.length).toBe(2);
@@ -87,10 +90,12 @@ describe('The express-slicer', function () {
     it('should be able to slice particular attributes from one object', function (done) {
         var endpoint = 'http://' + host + ':' + port + '/persons/1?fields=email';
 
-        function onResponse (err, person) {
+        function onResponse (err, person, statusCode) {
             if (err) {
                 throw err; // Let the test crash if there is an error!
             }
+
+            expect(util.isArray(person)).toBe(false);
 
             expect(person).toBeDefined();
             expect(person.email).toBeDefined();
@@ -103,4 +108,23 @@ describe('The express-slicer', function () {
         get(endpoint, onResponse);
     });
 
+    it('should return the correct data type if the response body is empty', function (done) {
+        var endpoint = 'http://' + host + ':' + port + '/persons?fields=fooo';
+
+        function onResponse (err, persons, statusCode) {
+            if (err) {
+                throw err; // Let the test crash if there is an error!
+            }
+
+            expect(util.isArray(persons)).toBe(true);
+
+            expect(persons).toBeDefined();
+            expect(util.isArray(persons)).toBe(true);
+            expect(persons.length).toBe(0);
+
+            done();            
+        }
+
+        get(endpoint, onResponse);
+    });
 });

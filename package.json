@@ -1,7 +1,7 @@
 {
   "name": "express-slicer",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.2.0",
+  "description": "An Express middleware that provides the functionality for partial JSON responses based on the query string.",
   "main": "index.js",
   "scripts": {
     "test": "grunt test"
