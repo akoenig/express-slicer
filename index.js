@@ -85,7 +85,7 @@ ExpressSlicer.prototype.$$extractFields = function $$extractFields (obj, fields)
 /**
  * @private
  *
- * The dispatcher function that prepares the slicable object(s).
+ * The dispatcher function that prepares the sliceable object(s).
  *
  * @param {array|object} sliceables An array or one single object from which the fields should be extracted.
  * @param {array} fields The fields that should be extracted.
