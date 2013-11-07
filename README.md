@@ -31,10 +31,12 @@ The middleware can handle array responses as well as single objects:
 
     Response body:
 
-        {
-            id: 1,
-            email: 'andre.koenig@gmail.com'
-        }
+```
+{
+    id: 1,
+    email: 'andre.koenig@gmail.com'
+}
+```
 
 ## Installation
 
