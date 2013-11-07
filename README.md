@@ -29,7 +29,7 @@ The middleware can handle array responses as well as single objects:
 
     GET http://host.tld/persons/1?fields=id,email
 
-    Response body:
+Response body:
 
 ```
 {
