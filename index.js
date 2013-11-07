@@ -69,6 +69,7 @@ ExpressSlicer.prototype.$$extractFields = function $$extractFields (obj, fields)
  *
  * @param {array||object} slicables An array or one single object from which the fields should be extracted.
  * @param {array} fields The fields that should be extracted.
+ *
  * @return {array|object} The single sliced object or the array with sliced objects.
  *
  */
