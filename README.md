@@ -2,6 +2,8 @@
 
 express-slicer is a middleware for the Express framework which provides the functionality for partial JSON responses based on the `field` attribute in the query string.
 
+[![Build Status](https://travis-ci.org/akoenig/express-slicer.png?branch=master)](https://travis-ci.org/akoenig/express-slicer)
+
 ## An example
 
 Let's say you are the proud owner of an API that provides information about all the people in the world. Every human-being do have an incredible amount of personal attributes: first name, last name, age, email address, personal address, bla bla bla. If you design your API in order to deliver all these information on every single request it might be, well, it will be a bottleneck. What if your API could be more flexible and will only deliver the attributes that has been requested? Nice, eh? That is what `express-slicer` will offer to you.
